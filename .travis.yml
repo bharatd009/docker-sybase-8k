@@ -15,11 +15,11 @@ script:
   # - docker exec -it my-sybase isql -U sa -P myPass -S MYSYBASE
   - docker stop my-sybase
   - echo "Testing public image on Docker Hub"
-  - docker run -d -p 5000:5000  --name nguoianphu-sybase nguoianphu/docker-sybase
+  - docker run -d -p 5000:5000  --name sybase-16-2 bharatd009/docker-sybase-8k
   - docker ps -a
   - docker images
   - echo "Checking sybase"  
   - docker logs nguoianphu-sybase
-  - docker exec -it nguoianphu-sybase ps -ef
+  - docker exec -it sybase-16-2 ps -ef
   # - docker exec -it nguoianphu-sybase isql -U sa -P myPass -S MYSYBASE  
-  - docker stop nguoianphu-sybase
+  - docker stop sybase-16-2
